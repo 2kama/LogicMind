@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="css/bootmetro-icons.css" media="screen,projection">
+    <script type="text/javascript" src="js/jquery.1.10.1.js"></script>
+    <script type="text/javascript" src="js/jquery.cycle.js"></script>
+    <script type="text/javascript" src="phonegap.js"></script>
+    <script type="text/javascript">
+
+        document.addEventListener("backbutton", dismissApp, false);
+        function dismissApp() {
+           window.history.back();
+         }
+     </script>
+    
+  </head>
+  <script type="text/javascript">
+     $("#slider").cycle({
+    fx:"scrollUp",
+    delay:0000,
+    timeout:5000,
+});
+  </script>
+  <body>
+    <div id="header">
+      <div id="spooky1"><img src="img/header.fw.png" /></div>
+      
+      <div id="spooky"><i class="icon-coin"></i>
+      <script type="text/javascript">
+        document.write(localStorage.coin);
+        window.setInterval("refreshDiv()", 1000);  
+            function refreshDiv(){ 
+               localStorage.longti = parseInt(localStorage.longti) + 1;
+               if ((parseInt(localStorage.longti) % 18000) == 0) {
+                  localStorage.free = parseInt(localStorage.free) + 1;
+                  localStorage.coin = parseInt(localStorage.coin) + 5;
+               }
+               else {
+
+               }
+            }
+      </script></div>
+    </div>
+    <div id="peach">
+       <a href="play.html"><div id="peacher"><i class="icon-play-4"></i></div></a>
+       <a href="highscore.html"><div id="peacher"><i class="icon-trophy-2"></i></div></a>
+       <a href="token.html"><div id="peacher"><i class="icon-coin"></i></div></a>
+       <a href="about.html"><div id="peacher"><i class="icon-info-4"></i></div></a>
+       <a href="setting.html"><div id="peacher"><i class="icon-settings"></i></div></a>
+       
+
+    </div>
+    <div id="background"><center><img src="img/background.fw.png"></center></div>
+    
+    <div id="menu">
+     <div id="she" style="width:80%;height:15px;padding-top:5px;margin-left:auto;margin-right:auto;margin-bottom: 10px;"><i class="icon-bookmark-4" style="color: #444;"></i> Credits</div>
+     
+     <div id="slider">
+       <div id="sid">Created by<br><b>Mishael Kama</b><br><b>Olusakin Iseoluwa</b></div>
+       <div id="sod">LogicMind<br>A production of kamaApps.inc<br><br><img src="img/credit.fw.png"></div>
+       <div id="sid"><img src="img/index.fw.png" /><br>LogicMind</div>
+       <div id="sod">
+        <a href="https://plus.google.com/u/1/102842292877264895953/posts?hl=en"><i class="icon-googleplus" style="font-size:40px;"></i><br> KamaApps Inc</a></div>
+     </div>
+
+   </div>
+ </body>
+ </html>

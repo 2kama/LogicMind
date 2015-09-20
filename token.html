@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="css/bootmetro-icons.css" media="screen,projection">
+    <script type="text/javascript" src="js/jquery.1.10.1.js"></script>
+    <script type="text/javascript" src="phonegap.js"></script>
+    <script type="text/javascript">
+
+        document.addEventListener("backbutton", dismissApp, false);
+        function dismissApp() {
+           window.history.back();
+         }
+     </script>
+    
+  </head>
+  <body>
+
+
+    <script type="text/javascript">
+          window.setInterval("refreshDiv()", 1000);  
+            function refreshDiv(){   
+                localStorage.longti = parseInt(localStorage.longti) + 1;
+                if ((parseInt(localStorage.longti) % 18000) == 0) {
+                  localStorage.free = parseInt(localStorage.free) + 1;
+                  localStorage.coin = parseInt(localStorage.coin) + 5;
+               }
+               else {
+
+               }
+
+                document.getElementById("spooky").innerHTML =  "<i class='icon-coin'></i> " + localStorage.coin;
+              }
+
+
+              function funds() {
+                 document.getElementById("backdrop").style.display = "block";
+                 document.getElementById("fund").style.display = "block";
+              }
+
+              function removefunds() {
+                document.getElementById("backdrop").style.display = "none";
+                 document.getElementById("fund").style.display = "none";
+              }
+       </script>
+    <a href="javascript:;" onClick="javascript:removefunds();"><div class="backdrop" id="backdrop"></div></a>
+    <div id="fund">Sorry! You have insufficient coins for this token.<br><i class="icon-coin"></i></div>
+
+
+    <div id="header">
+      <div id="spooky1"><img src="img/header.fw.png" /></div>
+      
+      <div id="spooky"><i class="icon-coin"></i>
+      <script type="text/javascript">
+        document.write(localStorage.coin);
+      </script></div>
+    </div>
+    <div id="peach">
+       <a href="play.html"><div id="peacher"><i class="icon-play-4"></i></div></a>
+       <a href="highscore.html"><div id="peacher"><i class="icon-trophy-2"></i></div></a>
+       <a href="about.html"><div id="peacher"><i class="icon-info-4"></i></div></a>
+       <a href="setting.html"><div id="peacher"><i class="icon-settings"></i></div></a>
+       <a href="credit.html"><div id="peacher"><i class="icon-bookmark-4"></i></div></a>
+
+    </div>
+<script type="text/javascript">
+  function pointadd() {
+    if (localStorage.pointadd == "zero") {
+      if (parseInt(localStorage.coin) >= 15) {
+      localStorage.pointadd = "one";
+      document.getElementById('token1').innerHTML = '<b>2+</b><br>This token adds 2 points for every sequence you get right.<br><br><a href="javascript:;" onClick="javascript:pointadd();"><i class="icon-coin"></i> <b>25</b></a>';
+      localStorage.coin = parseInt(localStorage.coin) - 15;
+      localStorage.free = parseInt(localStorage.free) + 1;
+    }
+      else {
+         funds();
+      }
+
+    }
+
+
+    else if (localStorage.pointadd == "one") {
+      if (parseInt(localStorage.coin) >= 25) {
+      localStorage.pointadd = "two";
+      document.getElementById('token1').innerHTML = '<b>5+</b><br>This token adds 5 points for every sequence you get right.<br><br><a href="javascript:;" onClick="javascript:pointadd();"><i class="icon-coin"></i> <b>30</b></a>';
+      localStorage.coin = parseInt(localStorage.coin) - 25;
+      localStorage.free = parseInt(localStorage.free) + 1;
+    }
+      else {
+         funds();
+      }
+
+    }
+
+
+    else if (localStorage.pointadd == "two") {
+      if (parseInt(localStorage.coin) >= 30) {
+      localStorage.pointadd = "five";
+      document.getElementById('token1').innerHTML = '<b>7+</b><br>This token adds 7 points for every sequence you get right.<br><br><a href="javascript:;" onClick="javascript:pointadd();"><i class="icon-coin"></i> <b>40</b></a>';
+      localStorage.coin = parseInt(localStorage.coin) - 30;
+      localStorage.free = parseInt(localStorage.free) + 1;
+    }
+      else {
+         funds();
+      }
+
+    }
+
+
+    else if (localStorage.pointadd == "five") {
+      if (parseInt(localStorage.coin) >= 40) {
+      localStorage.pointadd = "seven";
+      document.getElementById('token1').innerHTML = '<b>10+</b><br>This token adds 10 points for every sequence you get right.<br><br><a href="javascript:;" onClick="javascript:pointadd();"><i class="icon-coin"></i> <b>50</b></a>';
+      localStorage.coin = parseInt(localStorage.coin) - 40;
+      localStorage.free = parseInt(localStorage.free) + 1;
+    }
+      else {
+         funds();
+      }
+
+    }
+
+    else {
+      if (parseInt(localStorage.coin) >= 50) {
+      localStorage.pointadd = "ten";
+      document.getElementById('token1').style.display = "none";
+      localStorage.coin = parseInt(localStorage.coin) - 50;
+      localStorage.free = parseInt(localStorage.free) + 1;
+    }
+      else {
+         funds();
+      }
+
+    }
+}
+
+
+function timeadd() {
+  if (localStorage.timeadd == "no") {
+      if (parseInt(localStorage.coin) >= 10) {
+      localStorage.timeadd = "maybe";
+      document.getElementById('token2').innerHTML = '<b>t++</b><br>This token adds 10 seconds to your timer for every sequence you get right in the Time-run mode.<br><br><a href="javascript:;" onClick="javascript:timeadd();"><i class="icon-coin"></i> <b>20</b></a>';
+      localStorage.coin = parseInt(localStorage.coin) - 10;
+      localStorage.free = parseInt(localStorage.free) + 1;
+    }
+      else {
+         funds();
+      }
+
+    }
+
+    else {
+      if (parseInt(localStorage.coin) >= 20) {
+      localStorage.timeadd = "yes";
+      document.getElementById('token2').style.display = "none";
+      localStorage.coin = parseInt(localStorage.coin) - 20;
+      localStorage.free = parseInt(localStorage.free) + 1;
+    }
+      else {
+         funds();
+      }
+
+    }
+
+
+}
+
+
+
+function time_run() {
+  if (localStorage.unlocktlig == "no") {
+      if (parseInt(localStorage.coin) >= 30) {
+      localStorage.unlocktlig = "maybe";
+      document.getElementById('token3').innerHTML = '<b>Unlock Light (Time-run)</b><br>This token unlocks the light level of the Time-run mode.<br><br><a href="javascript:;" onClick="javascript:time_run();"><i class="icon-coin"></i> <b>45</b></a>';
+      localStorage.coin = parseInt(localStorage.coin) - 30;
+      localStorage.free = parseInt(localStorage.free) + 1;
+    }
+      else {
+         funds();
+      }
+
+    }
+
+    else {
+      if (parseInt(localStorage.coin) >= 45) {
+      localStorage.unlocktlig = "yes";
+      document.getElementById('token3').style.display = "none";
+      localStorage.coin = parseInt(localStorage.coin) - 45;
+      localStorage.free = parseInt(localStorage.free) + 1;
+    }
+      else {
+         funds();
+      }
+
+    }
+
+
+}
+
+
+function miss() {
+  if (localStorage.miss == "one") {
+      if (parseInt(localStorage.coin) >= 15) {
+      localStorage.miss = "two";
+      document.getElementById('token5').innerHTML = '<b>Get Miss allowance</b><br>This token gives you finite chances anytime you get a sequence wrong.<br><br><a href="javascript:;" onClick="javascript:miss();"><i class="icon-coin"></i><b>20</b></a>';
+      localStorage.coin = parseInt(localStorage.coin) - 15;
+      localStorage.free = parseInt(localStorage.free) + 1;
+    }
+      else {
+         funds();
+      }
+
+    }
+
+    else {
+      if (parseInt(localStorage.coin) >= 20) {
+      localStorage.miss = "three";
+      document.getElementById('token5').style.display = "none";
+      localStorage.coin = parseInt(localStorage.coin) - 20;
+      localStorage.free = parseInt(localStorage.free) + 1;
+    }
+      else {
+         funds();
+      }
+
+    }
+
+
+}
+
+
+
+function slip_watch() {
+  if (localStorage.unlocksli == "no") {
+      if (parseInt(localStorage.coin) >= 30) {
+      localStorage.unlocksli = "maybe";
+      document.getElementById('token4').innerHTML = '<b>Unlock Light (Slip watch)</b><br>This token unlocks the light level of the Slip watch mode.<br><br><a href="javascript:;" onClick="javascript:slip_watch();"><i class="icon-coin"></i> <b>45</b></a>';
+      localStorage.coin = parseInt(localStorage.coin) - 30;
+      localStorage.free = parseInt(localStorage.free) + 1;
+    }
+      else {
+         funds();
+      }
+
+    }
+
+    else {
+      if (parseInt(localStorage.coin) >= 45) {
+      localStorage.unlocksli = "yes";
+      document.getElementById('token4').style.display = "none";
+      localStorage.coin = parseInt(localStorage.coin) - 45;
+      localStorage.free = parseInt(localStorage.free) + 1;
+    }
+      else {
+         funds();
+      }
+
+    }
+
+
+}
+
+
+
+</script>
+<div id="menu">
+  <div id="she" style="width:80%;height:15px;padding-top:5px;margin-left:auto;margin-right:auto;margin-bottom: 10px;"><i class="icon-coin" style="color: #444;"></i> Buy Tokens</div>
+<div id="token1">
+  <b>
+    <script type="text/javascript">
+    if (localStorage.pointadd == "zero") {
+       document.write("1+");
+    }
+    else if (localStorage.pointadd == "five") {
+       document.write("2+");
+    }
+    else if (localStorage.pointadd == "ten") {
+       document.write("5+");
+    }
+    else if (localStorage.pointadd == "fifteen") {
+       document.write("7+");
+    }
+    else {
+       document.write("10+");
+    }
+    </script>
+  </b><br>
+  This token adds 
+  <script type="text/javascript">
+    if (localStorage.pointadd == "zero") {
+       document.write("1");
+    }
+    else if (localStorage.pointadd == "five") {
+       document.write("2");
+    }
+    else if (localStorage.pointadd == "ten") {
+       document.write("5");
+    }
+    else if (localStorage.pointadd == "fifteen") {
+       document.write("7");
+    }
+    else {
+       document.write("10");
+    }
+    </script>
+   point(s) for every sequence you get right.<br><br>
+  <a href="javascript:;" onClick="javascript:pointadd();"><i class="icon-coin"></i>
+   <b>
+   <script type="text/javascript">
+    if (localStorage.pointadd == "zero") {
+       document.write("15");
+    }
+    else if (localStorage.pointadd == "one") {
+       document.write("25");
+    }
+    else if (localStorage.pointadd == "two") {
+       document.write("30");
+    }
+    else if (localStorage.pointadd == "five") {
+       document.write("40");
+    }
+    else {
+       document.write("50");
+    }
+    </script>
+  </b></a>
+</div>
+<div id="token2">
+  <b>
+  <script type="text/javascript">
+   if (localStorage.timeadd == "no") {
+      document.write("t+");
+   }
+   else {
+      document.write("t++");
+   }
+  </script>
+  </b><br>
+  This token adds 
+   <script type="text/javascript">
+   if (localStorage.timeadd == "no") {
+      document.write("5");
+   }
+   else {
+      document.write("10");
+   }
+  </script>
+   seconds to your timer for every sequence you get right in the Time run mode.<br><br>
+  <a href="javascript:;" onClick="javascript:timeadd();"><i class="icon-coin"></i>
+   <b><script type="text/javascript">
+   if (localStorage.timeadd == "no") {
+      document.write("10");
+   }
+   else {
+      document.write("20");
+   }
+  </script>
+  </b></a>
+</div>
+<div id="token3">
+  <b>Unlock 
+  <script type="text/javascript">
+    if (localStorage.unlocktlig == "no") {
+       document.write("Lightening");
+    }
+    else {
+      document.write("Light");
+    }
+  </script>
+   (Time-run)</b><br>
+  This token unlocks the 
+  <script type="text/javascript">
+    if (localStorage.unlocktlig == "no") {
+       document.write("lightening");
+    }
+    else {
+      document.write("light");
+    }
+  </script>
+   level of the Time-run mode.<br><br>
+  <a href="javascript:;" onClick="javascript:time_run();"><i class="icon-coin"></i>
+    <b><script type="text/javascript">
+    if (localStorage.unlocktlig == "no") {
+       document.write("30");
+    }
+    else {
+      document.write("40");
+    }
+  </script>
+  </b></a>
+</div>
+<div id="token4">
+  <b>Unlock 
+   <script type="text/javascript">
+     if (localStorage.unlocksli == "no") {
+       document.write('Lightening');
+     }
+     else {
+      document.write('Light');
+     }
+   </script>
+   (Slip watch)</b><br>
+  This token unlocks the 
+    <script type="text/javascript">
+     if (localStorage.unlocksli == "no") {
+       document.write('lightening');
+     }
+     else {
+      document.write('light');
+     }
+   </script>
+   level of the Slip watch mode.<br><br>
+  <a href="javascript:;" onClick="javascript:slip_watch();"><i class="icon-coin"></i>
+   <b><script type="text/javascript">
+     if (localStorage.unlocksli == "no") {
+       document.write('30');
+     }
+     else {
+      document.write('45');
+     }
+   </script>
+  </b></a>
+</div>
+<div id="token5">
+  <b>Get Miss allowance</b><br>
+  This token gives you finite chances anytime you get a sequence wrong.<br><br>
+  <a href="javascript:;" onClick="javascript:miss();"><i class="icon-coin"></i>
+   <b><script type="text/javascript">
+     if (localStorage.miss == "one") {
+       document.write('15');
+     }
+     else{
+      document.write('20');
+     }
+   </script>
+  </b></a>
+</div>
+<div id="token6">
+  <b>Unlock Inert Mode</b><br>
+  This token unlocks the inert mode of the game.<br><br>
+  <a href="javascript:;"><b>Coming soon!</b></a>
+</div>
+<script type="text/javascript">
+if (localStorage.pointadd == "ten") {
+  document.getElementById('token1').style.display = "none";
+}
+if (localStorage.timeadd == "yes") {
+  document.getElementById('token2').style.display = "none";
+}
+if (localStorage.unlocktlig == "yes") {
+  document.getElementById('token3').style.display = "none";
+}
+if (localStorage.unlocksli == "yes") {
+  document.getElementById('token4').style.display = "none";
+}
+if (localStorage.miss == "three") {
+  document.getElementById('token5').style.display = "none";
+}
+</script>
+</div>
+</body>
+</html>

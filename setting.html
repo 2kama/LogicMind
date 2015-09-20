@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="css/bootmetro-icons.css" media="screen,projection">
+    <script type="text/javascript" src="js/jquery.1.10.1.js"></script>
+    <script type="text/javascript" src="js/jquery.cycle.js"></script>
+    <script type="text/javascript" src="phonegap.js"></script>
+    <script type="text/javascript">
+
+        document.addEventListener("backbutton", dismissApp, false);
+        function dismissApp() {
+           window.history.back();
+         }
+     </script>
+    
+  </head>
+  <body>
+    <a href="javascript:;" onClick="javascript:removefunds();"><div class="backdrop" id="backdrop"></div></a>
+    <div id="fund">Are you sure you want to reset the game?<br><br><a href="javascript:;" onClick="javascript:reset();">Yes</a></div>
+    <script type="text/javascript">
+
+        function funds() {
+                 document.getElementById("backdrop").style.display = "block";
+                 document.getElementById("fund").style.display = "block";
+              }
+
+              function removefunds() {
+                document.getElementById("backdrop").style.display = "none";
+                 document.getElementById("fund").style.display = "none";
+              }
+
+
+       window.setInterval("refreshDiv()", 1000);  
+            function refreshDiv(){ 
+               localStorage.longti = parseInt(localStorage.longti) + 1;
+
+               if ((parseInt(localStorage.longti) % 18000) == 0) {
+                  localStorage.free = parseInt(localStorage.free) + 1;
+                  localStorage.coin = parseInt(localStorage.coin) + 5;
+               }
+               else {
+
+               }
+
+               var hour = Math.floor(parseInt(localStorage.longti) / 3600);
+               var minute = Math.floor((parseInt(localStorage.longti) % 3600) / 60);
+               var second = (parseInt(localStorage.longti) % 3600) % 60;
+
+              if (hour < 10) {
+                 hour = "0" + hour;
+              }
+              if (minute < 10) {
+                 minute = "0" + minute;
+              }
+              if (second < 10) {
+                 second = "0" + second;
+              }
+
+
+               document.getElementById('shunt').innerHTML = '<i class="icon-clock" style="color: #444;"></i> ' + hour + ' : ' + minute + ' : ' + second;
+
+               document.getElementById("spooky").innerHTML =  "<i class='icon-coin'></i> " + localStorage.coin;
+            }
+
+            function reset() {
+              localStorage.longti = 0;
+              localStorage.miss = "one";
+              localStorage.coin = 0;
+              localStorage.free = 0;
+              localStorage.unlocktlig = "no";
+              localStorage.unlocksli = "no";
+              localStorage.ssh = 60;
+              localStorage.sshs = "Mish";
+              localStorage.sbh = 60;
+              localStorage.sbhs = "Angel";
+              localStorage.slih = 55;
+              localStorage.slihs = "Shaddai";
+              localStorage.slgh = 40;
+              localStorage.slghs = "Vera";
+              localStorage.tsh = 100;
+              localStorage.tshs = "Davies";
+              localStorage.tbh = 90;
+              localStorage.tbhs = "Babarinsa";
+              localStorage.tlih = 90;
+              localStorage.tlihs = "Jameson";
+              localStorage.tlgh = 60;
+              localStorage.tlghs = "Dipo-Adedoyin";
+              localStorage.pointadd = "zero";
+              localStorage.timeadd = "no";
+
+              removefunds();
+            }
+
+            function vibrate() {
+              if (localStorage.vibrate == "yes") {
+                document.getElementById("checkee").innerHTML = 'Vibration (Off)';
+                localStorage.vibrate = "no";
+              }
+              else {
+                  document.getElementById("checkee").innerHTML = 'Vibration (On)';
+                localStorage.vibrate = "yes";
+                navigator.notification.vibrate(500);
+
+              }
+            }
+    </script>
+    <div id="header">
+      <div id="spooky1"><img src="img/header.fw.png" /></div>
+      
+      <div id="spooky"><i class="icon-coin"></i>
+      <script type="text/javascript">
+        document.write(localStorage.coin);
+      </script></div>
+    </div>
+    <div id="peach">
+       <a href="play.html"><div id="peacher"><i class="icon-play-4"></i></div></a>
+       <a href="highscore.html"><div id="peacher"><i class="icon-trophy-2"></i></div></a>
+       <a href="token.html"><div id="peacher"><i class="icon-coin"></i></div></a>
+       <a href="about.html"><div id="peacher"><i class="icon-info-4"></i></div></a>
+       <a href="credit.html"><div id="peacher"><i class="icon-bookmark-4"></i></div></a>
+
+    </div>
+    <div id="background"><center><img src="img/background.fw.png"></center></div>
+    
+    <div id="menu">
+     <div id="she" style="width:80%;height:15px;padding-top:5px;margin-left:auto;margin-right:auto;margin-bottom: 10px;"><i class="icon-settings" style="color: #444;"></i> Settings</div>
+     
+     Time given to game:
+     <div id="she" style="width:80%;height:15px;padding-top:5px;margin-left:auto;margin-right:auto;margin-bottom: 10px;"><div id="shunt"><i class="icon-clock" style="color: #444;"></i> 
+      <script type="text/javascript">
+        document.write("Loading...");
+    </script></div></div>
+    
+
+    <a href="javascript:;" onClick="javascript:vibrate();" id="love"><div id="checkee" style="height:30px;float:left;border-top: 2px solid #008C00;background: #00B22D;box-shadow: 0 3px 3px rgba(0, 178, 45, 0.6);"> Vibration ( 
+
+    <script type="text/javascript">
+      if (localStorage.vibrate == "yes") {
+        document.write("On");
+      }
+      else {
+        document.write("Off");
+      }
+    </script> 
+    ) </div></a>
+    <a href="javascript:;" onClick="javascript:funds();"><div id="checkee" style="height:30px;float:left;"> Reset Game </div></a>
+
+   </div>
+ </body>
+ </html>

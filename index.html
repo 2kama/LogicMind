@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="css/bootmetro-icons.css" media="screen,projection">
+    <script type="text/javascript" src="js/jquery.1.10.1.js"></script>
+    <script type="text/javascript" src="js/jquery.cycle.js"></script>
+    <script type="text/javascript" src="phonegap.js"></script>
+
+    
+  </head>
+  <body>
+    
+    <script type="text/javascript">
+      localStorage.scorer = 0;
+      
+      localStorage.firsttimer;
+      //vibrate
+      if (localStorage.vibrate) !== 'undefined') {
+            localStorage.vibrate = localStorage.vibrate;
+       }
+       else {
+        localStorage.vibrate = "yes";
+       }
+
+       //free
+       if (localStorage.free) !== 'undefined') {
+            localStorage.free = localStorage.free;
+       }
+       else {
+        localStorage.free = 1;
+       }
+      // play long
+       if (localStorage.longti !== 'undefined') {
+        localStorage.longti = localStorage.longti;
+      }
+      else {
+        localStorage.longti = 0;
+      }
+      //miss allowance
+      if (localStorage.miss !== 'undefined') {
+        localStorage.miss = localStorage.miss;
+      }
+      else {
+        localStorage.miss = "one";
+      }
+      
+      //coin storage
+      
+      if (localStorage.coin !== 'undefined') {
+        localStorage.coin = localStorage.coin;
+      }
+      else {
+        localStorage.coin = 0;
+      }
+      
+      //unlock time-run levels
+      
+      if (localStorage.unlocktlig !== 'undefined') {
+        localStorage.unlocktlig = localStorage.unlocktlig;
+      }
+      else {
+        localStorage.unlocktlig = "no";
+      }
+
+      //unlock slip watch levels
+      
+      if (localStorage.unlocksli !== 'undefined') {
+        localStorage.unlocksli = localStorage.unlocksli;
+      }
+      else {
+        localStorage.unlocksli = "no";
+      }
+
+     //slip watch highscores
+      
+      
+      if (localStorage.ssh !== 'undefined') {
+        localStorage.ssh = localStorage.ssh;
+      }
+      else {
+        localStorage.ssh = 60;
+      }
+      
+      if (localStorage.sshs !== 'undefined') {
+        localStorage.sshs = localStorage.sshs;
+      }
+      else {
+        localStorage.sshs = "Mish";
+      }
+
+      
+      
+      if (localStorage.sbh !== 'undefined') {
+        localStorage.sbh = localStorage.sbh;
+      }
+      else {
+        localStorage.sbh = 60;
+      }
+      
+      if (localStorage.sbhs !== 'undefined') {
+        localStorage.sbhs = localStorage.sbhs;
+      }
+      else {
+        localStorage.sbhs = "Angel";
+      }
+
+      
+      
+      if (localStorage.slih !== 'undefined') {
+        localStorage.slih = localStorage.slih;
+      }
+      else {
+        localStorage.slih = 55;
+      }
+      
+      if (localStorage.slihs !== 'undefined') {
+        localStorage.slihs = localStorage.slihs;
+      }
+      else {
+        localStorage.slihs = "Shaddai";
+      }
+
+     
+      
+      if (localStorage.slgh !== 'undefined') {
+        localStorage.slgh = localStorage.slgh;
+      }
+      else {
+        localStorage.slgh = 40;
+      }
+ 
+      if (localStorage.slghs !== 'undefined') {
+        localStorage.slghs = localStorage.slghs;
+      }
+      else {
+        localStorage.slghs = "Vera";
+      }
+
+
+
+
+      //time run highscores
+   
+      
+      if (localStorage.tsh !== 'undefined') {
+        localStorage.tsh = localStorage.tsh;
+      }
+      else {
+        localStorage.tsh = 100;
+      }
+    
+      if (localStorage.tshs !== 'undefined') {
+        localStorage.tshs = localStorage.tshs;
+      }
+      else {
+        localStorage.tshs = "Davies";
+      }
+
+   
+      
+      if (localStorage.tbh !== 'undefined') {
+        localStorage.tbh = localStorage.tbh;
+      }
+      else {
+        localStorage.tbh = 90;
+      }
+   
+      if (localStorage.tbhs !== 'undefined') {
+        localStorage.tbhs = localStorage.tbhs;
+      }
+      else {
+        localStorage.tbhs = "Babarinsa";
+      }
+
+ 
+      
+      if (localStorage.tlih !== 'undefined') {
+        localStorage.tlih = localStorage.tlih;
+      }
+      else {
+        localStorage.tlih = 90;
+      }
+  
+      if (localStorage.tlihs !== 'undefined') {
+        localStorage.tlihs = localStorage.tlihs;
+      }
+      else {
+        localStorage.tlihs = "Jameson";
+      }
+
+   
+      
+      if (localStorage.tlgh !== 'undefined') {
+        localStorage.tlgh = localStorage.tlgh;
+      }
+      else {
+        localStorage.tlgh = 60;
+      }
+  
+      if (localStorage.tlghs !== 'undefined') {
+        localStorage.tlghs = localStorage.tlghs;
+      }
+      else {
+        localStorage.tlghs = "Dipo-Adedoyin";
+      }
+
+      //tokens
+      // point adders
+      if (localStorage.pointadd !== 'undefined') {
+        localStorage.pointadd = localStorage.pointadd;
+      }
+      else {
+        localStorage.pointadd = "zero";
+      }
+
+      //time adders
+      if (localStorage.timeadd !== 'undefined') {
+        localStorage.timeadd = localStorage.timeadd;
+      }
+      else {
+        localStorage.timeadd = "no";
+      }
+
+
+    </script>
+
+     <div id="welcome_scroll">
+
+      <div id="welcome"></div>
+
+       <div id="welcome" style="display:none;">
+        <center>
+        <img src="img/kama.fw.png" style="width: 40%"/><br><br><br>
+         <img src="img/index.fw.png" /><br>
+
+          LogicMind<br><br>
+          version 1.0.2<br>
+          &copy; 2015. kamaApps. Inc</center>
+       </div>
+
+
+     </div>
+<script type="text/JavaScript">
+
+ if (localStorage.firsttimer != 1) {
+ <!--
+setTimeout("location.href = 'confirm.html';",4000);
+-->
+}
+else {
+  <!--
+setTimeout("location.href = 'play.html';",4000);
+-->
+}
+</script>
+<script type="text/javascript">
+  $("#welcome_scroll").cycle({
+    fx:"fade",
+    delay:0000,
+    timeout:2000,
+});
+</script>
+  </body>
+</html>

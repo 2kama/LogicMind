@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="css/bootmetro-icons.css" media="screen,projection">
+    <script type="text/javascript" src="js/jquery.1.10.1.js"></script>
+    <script type="text/javascript" src="js/jquery.cycle.js"></script>
+    <script type="text/javascript" src="phonegap.js"></script>
+
+    <script type="text/javascript">
+   if (localStorage.firsttimer == 1) {
+     setTimeout("location.href = 'play.html';",0000);
+   }
+   
+
+   function start() {
+
+              localStorage.longti = 0;
+              localStorage.miss = "one";
+              localStorage.coin = 0;
+              localStorage.free = 1;
+              localStorage.unlocktlig = "no";
+              localStorage.unlocksli = "no";
+              localStorage.ssh = 60;
+              localStorage.sshs = "Mish";
+              localStorage.sbh = 60;
+              localStorage.sbhs = "Angel";
+              localStorage.slih = 55;
+              localStorage.slihs = "Shaddai";
+              localStorage.slgh = 40;
+              localStorage.slghs = "Vera";
+              localStorage.tsh = 100;
+              localStorage.tshs = "Davies";
+              localStorage.tbh = 90;
+              localStorage.tbhs = "Babarinsa";
+              localStorage.tlih = 90;
+              localStorage.tlihs = "Jameson";
+              localStorage.tlgh = 60;
+              localStorage.tlghs = "Dipo-Adedoyin";
+              localStorage.pointadd = "zero";
+              localStorage.timeadd = "no";
+              localStorage.firsttimer = 1;
+
+              <!--
+           setTimeout("location.href = 'play.html';",0000);
+           -->
+
+   }
+ </script>
+  </head>
+  <body>
+ 
+ <div id="welcome_scroll">
+
+       
+
+       <div id="welcome">
+         <center><img src="img/sequence.jpg" /><br><br><br>
+          <b style="font-size:20px;">LogicMind</b><br><br>
+          Have fun while finding the <br>missing number in the sequence<br><br>
+          Rating: <b style="font-size:20px;">Geniuses only!</b><br><br><br><br><br>
+          <a href="javascript:;" onClick="javascript:start();" style="font-size:24px;">Start</a></center>
+       </div>
+
+
+     </div>
+  </body>
+  </html>

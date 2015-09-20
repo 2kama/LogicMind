@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="css/bootmetro-icons.css" media="screen,projection">
+    <script type="text/javascript" src="js/jquery.1.10.1.js"></script>
+    <script type="text/javascript" src="js/jquery.cycle.js"></script>
+    <script type="text/javascript" src="phonegap.js"></script>
+    <script type="text/javascript">
+
+        document.addEventListener("backbutton", dismissApp, false);
+        function dismissApp() {
+           window.history.back();
+         }
+     </script>
+    
+  </head>
+  <body>
+    <div id="header">
+      <div id="spooky1"><img src="img/header.fw.png" /></div>
+      
+      <div id="spooky"><i class="icon-coin"></i>
+      <script type="text/javascript">
+        document.write(localStorage.coin);
+        window.setInterval("refreshDiv()", 1000);  
+            function refreshDiv(){ 
+               localStorage.longti = parseInt(localStorage.longti) + 1;
+               if ((parseInt(localStorage.longti) % 18000) == 0) {
+                  localStorage.free = parseInt(localStorage.free) + 1;
+                  localStorage.coin = parseInt(localStorage.coin) + 5;
+               }
+               else {
+
+               }
+            }
+      </script></div>
+    </div>
+    <div id="peach">
+       <a href="play.html"><div id="peacher"><i class="icon-play-4"></i></div></a>
+       <a href="highscore.html"><div id="peacher"><i class="icon-trophy-2"></i></div></a>
+       <a href="token.html"><div id="peacher"><i class="icon-coin"></i></div></a>
+       <a href="setting.html"><div id="peacher"><i class="icon-settings"></i></div></a>
+       <a href="credit.html"><div id="peacher"><i class="icon-bookmark-4"></i></div></a>
+
+    </div>
+    <div id="background"><center><img src="img/background.fw.png"></center></div>
+    
+    <div id="menu">
+     <div id="she" style="width:80%;height:15px;padding-top:5px;margin-left:auto;margin-right:auto;margin-bottom: 10px;"><i class="icon-info-4" style="color: #444;"></i> LogicMind</div>
+     
+     <div id="she" style="margin-left:auto;margin-right:auto;text-align:left;font-size: 16px;">
+       <b>About LogicMind</b><br>
+       LogicMind is a logic game that tests your ability to solve sequences while still having fun.
+     </div>
+     <div id="she" style="margin-left:auto;margin-right:auto;text-align:left;font-size: 16px;">
+       <b>Game Modes</b><br>
+       Try out any of the game modes of your choice. (Slip-watch)...find the missing number in the sequence before the clock runs out in each interval. (Time run)...find the missing number in as most sequence as you can go within a limit of time.
+     </div>
+     <div id="she" style="margin-left:auto;margin-right:auto;text-align:left;font-size: 16px;">
+       <b>Highscores</b><br>
+       Beating the highscores ain't gonna be easy, but you're free to try!
+     </div>
+     <div id="she" style="margin-left:auto;margin-right:auto;text-align:left;font-size: 16px;">
+       <b>Coins</b><br>
+       You earn coins from your points at the end of a game sessions. Coins are what you use in purchasing tokens for the game. $5 is automatically given to you for every 5 hours you spend on the spend.
+     </div>
+     <div id="she" style="margin-left:auto;margin-right:auto;text-align:left;font-size: 16px;">
+       <b>Tokens</b><br>
+       Coins won during game sessions can be used to buy tokens which helps in unlocking levels, buying time, points and so on.
+     </div>
+     <div id="she" style="margin-left:auto;margin-right:auto;text-align:left;font-size: 16px;">
+       <b>Answer peek</b><br>
+       With answer peek the missing number in a sequence will be reviewed to you, but it comes at a price (sometimes), or free.<br>
+       Answer peeks are tokens that cannot be bought but earned. They are earned for every 5 hours you spend on LogicMind, if you make 60 points in a game in any mode, for every token you buy and if you make a highscore.
+     </div>
+     <div id="she" style="margin-left:auto;margin-right:auto;text-align:left;font-size: 16px;">
+       <b>Feedback</b><br>
+       We'd love to hear from you and your views on how game could be improved. Mail us at <a href="mailto:kamaapp.inc@gmail.com" style="text-decoration:underline;">kamaapp.inc@gmail.com</a>.
+     </div>
+
+
+   </div>
+ </body>
+ </html>

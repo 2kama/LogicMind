@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="css/bootmetro-icons.css" media="screen,projection">
+    <script type="text/javascript" src="js/jquery.1.10.1.js"></script>
+    <script type="text/javascript" src="js/jquery.cycle.js"></script>
+    <script type="text/javascript" src="js/lightbox.js"></script>
+    <script type="text/javascript" src="phonegap.js"></script>
+     <script type="text/javascript">
+
+        document.addEventListener("backbutton", funds, false);
+        function dismissApp() {
+           navigator.app.exitApp();
+         }
+
+
+         function funds() {
+                 document.getElementById("backdrop").style.display = "block";
+                 document.getElementById("fund").style.display = "block";
+              }
+
+              function removefunds() {
+                document.getElementById("backdrop").style.display = "none";
+                 document.getElementById("fund").style.display = "none";
+              }
+     </script>
+    <script type="text/javascript">
+      var hint = ['You really have got to be a genius to solve these sequences.',
+                  'Some decimals in the sequence are actually approximates, you would have to find their fractions.',
+                  'There is always a pattern to every sequence, just keep at it.',
+                  'Wanna go a round now? You might suprise yourself!',
+                  '0.5, 1.2, 4.6, 7.5, ???, 19.2, 29.1. Errr! Could you help me with this in one of the modes?',
+                  'You really have to be a genius to try this...just saying',
+                  'Get on it, those coins are not gonna increase themselves',
+                  'Do not let the green ball below intimidate you! You can do it!',
+                  'Look at the bright side, you could run into a sequence you solved before',
+                  'What do you think Albert Einstein would score on this app?',
+                  'I triple dare you to make 60 points in your next trial',
+                  'The best part is you cannot get a score lower than 0',
+                  'Be sure to keep track of your timer, but do not panic...that will be bad',
+                  'Yeah I know, the timers are not fair, but what can we do?',
+                  'Sorry! Offline at the moment...',
+                  '........................  ......  ........  ....... .......... ............ ....'];
+
+    </script>
+
+  </head>
+  <body>
+      <a href="javascript:;" onClick="javascript:removefunds();"><div id="backdrop"></div></a>
+    <div id="fund">Do you want to exit?<br><a href="javascript:;" onClick="javascript:dismissApp();">Yes</a></div>
+    <div class="backdrop"></div>
+    <div id="header">
+      <div id="spooky1"><img src="img/header.fw.png" /></div>
+      
+      <div id="spooky"><i class="icon-coin"></i>
+
+      <script type="text/javascript" src="js/settings.js"></script>
+
+    </div>
+    </div>
+    <div id="peach">
+       <a href="highscore.html"><div id="peacher"><i class="icon-trophy-2"></i></div></a>
+       <a href="token.html"><div id="peacher"><i class="icon-coin"></i></div></a>
+       <a href="about.html"><div id="peacher"><i class="icon-info-4"></i></div></a>
+       <a href="setting.html"><div id="peacher"><i class="icon-settings"></i></div></a>
+       <a href="credit.html"><div id="peacher"><i class="icon-bookmark-4"></i></div></a>
+
+    </div>
+    <div id="background"><center><img src="img/background.fw.png"></center></div>
+
+    <script type="text/javascript" src="js/mode.js"></script>
+
+    <div id="menu">
+      <div id="she" style="width:80%;height:15px;padding-top:5px;margin-left:auto;margin-right:auto;margin-bottom: 10px;"><i class="icon-play-4" style="color: #444;"></i> Game Modes</div>
+      <a href="javascript:;" onClick="javascript:scolo1();"><div id="click1"><i class="icon-alarm"></i> Time-run </div></a>
+      <div id="click_p1">
+        Time-run<br><br>
+        <a href="t_shuriken.html"><div id="click_p_des"><i class="icon-star"></i> Shuriken</div></a>
+        <a href="t_bullet.html"><div id="click_p_des"><i class="icon-target"></i> Bullet</div></a>
+        <a href="t_lightening.html"><div id="click_p_des1"><i class="icon-electricity"></i> Lightening</div></a>
+        <div id="click_p_des_not1"><i class="icon-electricity"></i> Lightening<i class="icon-locked" style="color:#008C00;font-size:16px;"></i></div>
+        <a href="t_light.html"><div id="click_p_des2"><i class="icon-lines"></i> Light</div></a>
+        <div id="click_p_des_not2"><i class="icon-lines"></i> Light<i class="icon-locked" style="color:#008C00;font-size:16px;"></i></div>
+      </div>
+
+      <a href="javascript:;" onClick="javascript:scolo2();"><div id="click2"><i class="icon-thermometer"></i> Slip Watch </div></a>
+      <div id="click_p2">
+        Slip Watch<br><br>
+        <a href="s_shuriken.html"><div id="click_p_des"><i class="icon-star"></i> Shuriken</div></a>
+        <a href="s_bullet.html"><div id="click_p_des"><i class="icon-target"></i> Bullet</div></a>
+        <a href="s_lightening.html"><div id="click_p_des3"><i class="icon-electricity"></i> Lightening</div></a>
+        <div id="click_p_des_not3"><i class="icon-electricity"></i> Lightening<i class="icon-locked" style="color:#008C00;font-size:16px;"></i></div>
+        <a href="s_light.html"><div id="click_p_des4"><i class="icon-lines"></i> Light</div></a>
+        <div id="click_p_des_not4"><i class="icon-lines"></i> Light<i class="icon-locked" style="color:#008C00;font-size:16px;"></i></div>
+      </div>
+
+      <a href="javascript:;"><div id="click3"><i class="icon-foursquare-2"></i> Inert<i class="icon-locked" style="color:#002DB2;font-size:20px;"></i> </div></a>
+      <div id="click_p3">
+        Inert<br><br>
+        Coming up soon!
+      </div>
+
+      <div id="hint">
+        <div id="hinter"><i class="icon-light-bulb"></i></div>
+        <div id="hints">
+          <script type="text/javascript">
+            var place = Math.floor(Math.random() * 16);
+            document.getElementById('hints').innerHTML = hint[place];
+          </script>
+        </div>
+      </div>
+
+    </div>
+  </body>
+  </html>
+
+

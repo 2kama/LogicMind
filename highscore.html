@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="css/bootmetro-icons.css" media="screen,projection">
+    <script type="text/javascript" src="js/jquery.1.10.1.js"></script>
+    <script type="text/javascript" src="js/jquery.cycle.js"></script>
+    <script type="text/javascript" src="phonegap.js"></script>
+    <script type="text/javascript">
+
+        document.addEventListener("backbutton", dismissApp, false);
+        function dismissApp() {
+           window.history.back();
+         }
+     </script>
+    
+  </head>
+  <body>
+    <div id="header">
+      <div id="spooky1"><img src="img/header.fw.png" /></div>
+      
+      <div id="spooky"><i class="icon-coin"></i>
+      <script type="text/javascript">
+        document.write(localStorage.coin);
+        window.setInterval("refreshDiv()", 1000);  
+            function refreshDiv(){ 
+               localStorage.longti = parseInt(localStorage.longti) + 1;
+               if ((parseInt(localStorage.longti) % 18000) == 0) {
+                  localStorage.free = parseInt(localStorage.free) + 1;
+                  localStorage.coin = parseInt(localStorage.coin) + 5;
+               }
+               else {
+
+               }
+            }
+      </script></div>
+    </div>
+    <div id="peach">
+       <a href="play.html"><div id="peacher"><i class="icon-play-4"></i></div></a>
+       <a href="token.html"><div id="peacher"><i class="icon-coin"></i></div></a>
+       <a href="about.html"><div id="peacher"><i class="icon-info-4"></i></div></a>
+       <a href="setting.html"><div id="peacher"><i class="icon-settings"></i></div></a>
+       <a href="credit.html"><div id="peacher"><i class="icon-bookmark-4"></i></div></a>
+
+    </div>
+    <div id="background"><center><img src="img/background.fw.png"></center></div>
+    
+    <div id="menu">
+     <div id="she" style="width:80%;height:15px;padding-top:5px;margin-left:auto;margin-right:auto;margin-bottom: 10px;"><i class="icon-trophy-2" style="color: #444;"></i> Highscores</div>
+    <div id="click1" style="width: 80%;margin-left:10%;">Time run</div>
+    
+    <div id="sect">
+    <div id="state"><i class="icon-star"></i></div>
+    <div id="done"><script type="text/javascript">document.write(localStorage.tshs);</script></div>
+    <div id="wine"><script type="text/javascript">document.write(localStorage.tsh);</script></div>
+     </div>
+
+     <div id="sect">
+    <div id="state"><i class="icon-target"></i></div>
+    <div id="done"><script type="text/javascript">document.write(localStorage.tbhs);</script></div>
+    <div id="wine"><script type="text/javascript">document.write(localStorage.tbh);</script></div>
+     </div>
+     
+     <div id="sect">
+    <div id="state"><i class="icon-electricity"></i></div>
+    <div id="done"><script type="text/javascript">document.write(localStorage.tlihs);</script></div>
+    <div id="wine"><script type="text/javascript">document.write(localStorage.tlih);</script></div>
+     </div>
+
+     <div id="sect">
+    <div id="state"><i class="icon-lines"></i></div>
+    <div id="done"><script type="text/javascript">document.write(localStorage.tlghs);</script></div>
+    <div id="wine"><script type="text/javascript">document.write(localStorage.tlgh);</script></div>
+     </div>
+
+   </div>
+    
+
+    <div id="menu">
+
+    <div id="click1" style="width: 80%;margin-left:10%;">Slip-Watch</div>
+    <div id="sect">
+    <div id="state"><i class="icon-star"></i></div>
+    <div id="done"><script type="text/javascript">document.write(localStorage.sshs);</script></div>
+    <div id="wine"><script type="text/javascript">document.write(localStorage.ssh);</script></div>
+     </div>
+
+     <div id="sect">
+    <div id="state"><i class="icon-target"></i></div>
+    <div id="done"><script type="text/javascript">document.write(localStorage.sbhs);</script></div>
+    <div id="wine"><script type="text/javascript">document.write(localStorage.sbh);</script></div>
+     </div>
+     
+     <div id="sect">
+    <div id="state"><i class="icon-electricity"></i></div>
+    <div id="done"><script type="text/javascript">document.write(localStorage.slihs);</script></div>
+    <div id="wine"><script type="text/javascript">document.write(localStorage.slih);</script></div>
+     </div>
+
+     <div id="sect">
+    <div id="state"><i class="icon-lines"></i></div>
+    <div id="done"><script type="text/javascript">document.write(localStorage.slghs);</script></div>
+    <div id="wine"><script type="text/javascript">document.write(localStorage.slgh);</script></div>
+     </div>
+
+  </div>
+
+  </body>
+  </html>
